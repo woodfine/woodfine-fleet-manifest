@@ -1,23 +1,24 @@
-# Woodfine Fleet Manifest | Manifiesto de Flota Woodfine
+<div align="center">
+
+# Woodfine Fleet Manifest 
 ### *Operational Deployment & Fleet Orchestration*
 
+</div>
+
 ---
 
-## 🏢 Corporate Mandate
-Woodfine Management Corp. serves as the operating arm for **Woodfine Capital Projects Inc.**. Our mission is the secure procurement and management of real property assets through **Sovereign Computing**. [cite: 297, 298]
+## 🚀 The Deployment Pipeline
+Woodfine Management Corp. does not compile operating systems. We deploy **Silicon-Pinned ISOs** manufactured by the PointSav Foundry onto perfectly matched physical hardware.
 
-### ⚖️ Operational Pillars
-* **Perpetual Equity**: Long-term value creation over short-term liquidity. [cite: 302]
-* **Risk Management**: Strict adherence to a 1.2 Interest Coverage Ratio. [cite: 303]
-* **Sovereignty**: All data is secured on PointSav Totebox nodes. [cite: 303]
+### 🎛️ Active Fleet Topology (The 3-Node Mesh)
 
-## 📊 Deployment Matrix
-| Layer | Component | OS Variant | Trust Model |
+| Node Role | Target Repository | ISO Source | Authorized Silicon |
 | :--- | :--- | :--- | :--- |
-| **1. Infrastructure** | fleet-infrastructure-* | os-infrastructure | **Metal**: Trusted & Zero-Trust Nodes.  |
-| **2. Platform** | cluster-totebox-* | os-totebox | **Vault**: Isolated Data Containers.  |
-| **3. Delivery** | node-workplace | os-workplace | **Terminal**: Bare-Metal User Interface.  |
-| **4. Gateway** | gateway-interface-command | os-interface | **Authority**: Aggregation & Command.  |
+| **Node 1 (Muscle)** | `fleet-infrastructure-leased` | `pointsav/os-infrastructure` | Intel P8600 / BCM4322 |
+| **Node 2 (Relay)** | `gateway-cloud-relay` | `pointsav/os-totebox` | GCP / Standard VirtIO |
+| **Node 3 (Brain)** | `route-network-admin` | `pointsav/os-network-admin` | Intel i5-2400S / BCM57765 |
 
----
-*© 2026 Woodfine Management Corp. Orchestrated via PointSav.* [cite: 370]
+### 🛡️ Deployment Protocol
+1. **Pull:** Woodfine administrators pull the compiled ISOs from the PointSav release registry.
+2. **Flash:** ISOs are flashed to physical USB media via the Command Node.
+3. **Boot:** Target nodes are booted. The OS will auto-verify the physical silicon footprint before executing the seL4 root task.
